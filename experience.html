@@ -1,195 +1,866 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional experience of Sahil Patil in program operations, business operations, analytics and technology.">
   <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Sahil Patil's professional experience in programme operations, analytics and technology.">
-  <title>Experience | Sahil Patil</title>
+  <title>Professional Experience | Sahil Patil</title>
+
   <style>
     :root {
       --bg: #080b12;
-      --panel: #111927;
-      --border: #273349;
+      --panel: #101827;
+      --panel2: #131e30;
+      --border: #26354b;
       --text: #f4f7fc;
-      --muted: #aab5c7;
-      --blue: #82b0ff;
+      --muted: #a8b5c9;
+      --blue: #86b5ff;
+      --cyan: #66e2d0;
       --accent: #4c8dff;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: radial-gradient(ellipse at 80% 0%, #142440 0%, var(--bg) 45%);
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(76,141,255,.12), transparent 36rem),
+        var(--bg);
       color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.7;
     }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: white; }
-    .container { width: min(1000px, calc(100% - 36px)); margin: auto; }
-    header { border-bottom: 1px solid var(--border); background: #080b12; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,11,18,.92);
+      border-bottom: 1px solid rgba(134,181,255,.15);
+      backdrop-filter: blur(18px);
+    }
+
     nav {
-      min-height: 72px; display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 16px; padding: 12px 0;
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
-    .brand { color: var(--text); font-weight: 800; }
-    .brand span, .eyebrow { color: var(--blue); }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; }
-    .nav-links a { color: var(--muted); font-size: .9rem; }
-    main { padding: 64px 0; }
-    h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -.05em; }
-    h2 { font-size: 1.6rem; }
-    h3 { margin-bottom: 8px; }
-    p, li { color: var(--muted); }
-    .eyebrow { font-size: .78rem; letter-spacing: .14em; font-weight: 800; text-transform: uppercase; }
-    .intro { max-width: 760px; margin-bottom: 42px; }
-    .role {
-      padding: 28px; margin: 22px 0;
-      border: 1px solid var(--border); border-radius: 16px;
-      background: linear-gradient(145deg, #141e2e, var(--panel));
+
+    .brand {
+      font-weight: 850;
+      letter-spacing: -.04em;
+      white-space: nowrap;
     }
-    .meta { color: var(--blue); font-size: .9rem; font-weight: 700; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .tag { padding: 5px 10px; border: 1px solid var(--border); border-radius: 99px; color: #c9dcff; font-size: .8rem; }
-    .notice { padding: 18px; border-left: 3px solid var(--accent); background: #111927; border-radius: 8px; }
-    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; }
-    @media (max-width: 600px) {
-      .container { width: calc(100% - 28px); }
-      .role { padding: 20px; }
+
+    .brand span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--cyan);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 85px 0 55px;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      letter-spacing: -.065em;
+      line-height: 1.05;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 750px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 11px 17px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin: 0 0 65px;
+    }
+
+    .stat {
+      padding: 23px;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg,var(--panel2),var(--panel));
+      border-radius: 17px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.65rem,3.2vw,2.5rem);
+      letter-spacing: -.05em;
+      line-height: 1.2;
+      color: var(--blue);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .86rem;
+      margin-top: 8px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem,4vw,2.65rem);
+      line-height: 1.2;
+      letter-spacing: -.045em;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .experience-card {
+      background: rgba(16,24,39,.94);
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      padding: clamp(22px,4vw,38px);
+      margin-bottom: 22px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .job-header h3 {
+      font-size: clamp(1.45rem,3vw,2.15rem);
+      letter-spacing: -.04em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+      color: var(--blue);
+      font-weight: 750;
+      margin-bottom: 5px;
+    }
+
+    .job-meta {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--cyan);
+      background: rgba(102,226,208,.07);
+      border: 1px solid rgba(102,226,208,.25);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .73rem;
+      white-space: nowrap;
+    }
+
+    .job-summary {
+      color: var(--muted);
+      margin-bottom: 25px;
+      max-width: 850px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .detail h4 {
+      font-size: 1rem;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .detail ul {
+      padding-left: 20px;
+    }
+
+    .detail li {
+      color: var(--muted);
+      margin-bottom: 9px;
+      font-size: .92rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .impact {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 17px;
+    }
+
+    .impact strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--cyan);
+      letter-spacing: -.04em;
+    }
+
+    .impact span {
+      display: block;
+      color: var(--muted);
+      font-size: .81rem;
+      margin-top: 5px;
+    }
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .skill-group {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .skill-group h3 {
+      margin-bottom: 13px;
+      font-size: 1.05rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      color: var(--muted);
+      background: #172337;
+      border: 1px solid #2b3c53;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: .8rem;
+    }
+
+    .callout {
+      border-left: 3px solid var(--cyan);
+      background: rgba(102,226,208,.05);
+      padding: 14px 17px;
+      margin-top: 24px;
+      border-radius: 0 10px 10px 0;
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .next-links {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .next-link {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform .2s,border-color .2s;
+    }
+
+    .next-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+    }
+
+    .next-link strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .next-link span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease,transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width:800px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:650px) {
+      .container {
+        width: min(100% - 28px,1100px);
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 16px 22px 20px;
+        background: #0b101b;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 0;
+        font-size: .94rem;
+      }
+
+      .hero {
+        padding: 58px 0 38px;
+      }
+
+      .job-header {
+        flex-direction: column;
+      }
+
+      .two-col,
+      .skill-groups,
+      .next-links {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:380px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
+  <div class="nav-wrap">
     <nav class="container" aria-label="Main navigation">
-      <a class="brand" href="index.html">SAHIL<span>.</span> PATIL</a>
-      <div class="nav-links">
+      <a class="brand" href="index.html">SAHIL<span>.</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >Menu ☰</button>
+
+      <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="experience.html">Experience</a>
+        <a href="experience.html" aria-current="page">Experience</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="education.html">Education</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
-  </header>  <main class="container">
-    <div class="intro">
-      <p class="eyebrow">CAREER HISTORY</p>
-      <h1>Professional experience</h1>
-      <p>
-        My experience combines programme execution, institutional engagement,
-        data-oriented workflows and coordination between business and technology teams.
-        I focus on making work more structured, visible and actionable.
+  </div>
+
+  <main>
+    <header class="hero container">
+      <p class="eyebrow">Professional journey · Programmes · Operations · Analytics</p>
+
+      <h1>
+        Bridging business operations,
+        <span class="gradient">data and technology.</span>
+      </h1>
+
+      <p class="hero-copy">
+        My experience spans programme coordination, institutional engagement,
+        learning-platform operations, data workflows and technology-focused
+        initiatives. I focus on turning complex activities into organised,
+        trackable processes.
       </p>
-    </div><article class="role">
-  <p class="eyebrow">MOST RECENT ROLE</p>
-  <h2>Program &amp; Operations Associate</h2>
-  <p class="meta">PHN Technology Pvt. Ltd. · Pune, India</p>
-  <p class="meta">June 2025 – October 2026</p>
 
-  <p>
-    Worked across technology education programmes, institutional partnerships,
-    learning-platform operations and reporting workflows. The role required
-    coordination across teams and engagement with educational institutions.
-  </p>
+      <div class="actions">
+        <a class="button primary" href="#professional-experience">Explore experience ↓</a>
+        <a class="button" href="case-studies.html">View case studies</a>
+      </div>
+    </header>
 
-  <h3>Programme and operations coordination</h3>
-  <ul>
-    <li>Supported coordination of technology education initiatives and institutional programmes.</li>
-    <li>Contributed to college engagement through visits, seminars and discussions around programme requirements.</li>
-    <li>Worked with cross-functional colleagues to support programme delivery, follow-ups and operational visibility.</li>
-    <li>Supported institutional partnership activity, helping connect education requirements with programme offerings.</li>
-  </ul>
-
-  <h3>Analytics and reporting</h3>
-  <ul>
-    <li>Worked with LMS-related data and reporting to support visibility into learner activity and programme information.</li>
-    <li>Supported data cleaning and consistency work involving college names and contact information.</li>
-    <li>Used spreadsheet-based workflows and analytics tools to organise information for review and decision support.</li>
-    <li>Worked with a data workflow involving MySQL, Excel, Python and Power BI.</li>
-  </ul>
-
-  <h3>Recruitment workflow support</h3>
-  <ul>
-    <li>Supported structured candidate-screening workflows and spreadsheet-based outputs.</li>
-    <li>Worked with resume links and internal data-handling processes, with attention to consistent records.</li>
-    <li>Encountered a screening threshold of 55% within the workflow; this should not be interpreted as a validated measure of hiring accuracy.</li>
-  </ul>
-
-  <h3>Reported programme context</h3>
-  <ul>
-    <li>LMS activity was reported to have grown from roughly 2,000 learners to more than 10,000 active learners during the period discussed.</li>
-    <li>Institutional partnership activity was reported at more than 200 MoUs across Maharashtra and private universities.</li>
-    <li>Participated in more than 80 college visits and seminars.</li>
-  </ul>
-
-  <p class="notice">
-    These are self-reported programme figures. They describe the broader work
-    environment and my contributions; they are not independently audited and
-    are not presented as results attributable solely to me.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Programme Operations</span>
-    <span class="tag">Stakeholder Coordination</span>
-    <span class="tag">LMS Analytics</span>
-    <span class="tag">Excel</span>
-    <span class="tag">MySQL</span>
-    <span class="tag">Python</span>
-    <span class="tag">Power BI</span>
-  </div>
-</article>
-
-<article class="role">
-  <p class="eyebrow">EARLIER EXPERIENCE</p>
-  <h2>Data and client workflow support</h2>
-  <p class="meta">Diginix AI · Trader OTT platform</p>
-  <p class="meta">2024 · Approximately three months</p>
-
-  <p>
-    Contributed to work associated with the Trader OTT platform, including
-    analytical support, reporting and client communication coordinated
-    through the team.
-  </p>
-
-  <ul>
-    <li>Supported data-oriented tasks and preparation of information for review.</li>
-    <li>Contributed to reporting and spreadsheet-based work.</li>
-    <li>Helped coordinate client communication through the team.</li>
-    <li>Worked in a technology-product context where accuracy and communication were important.</li>
-  </ul>
-
-  <div class="tags">
-    <span class="tag">Data Support</span>
-    <span class="tag">Reporting</span>
-    <span class="tag">Client Coordination</span>
-    <span class="tag">Technology</span>
-  </div>
-
-  <p class="notice">
-    The exact job title and employment dates have not been specified here;
-    they should be added only after confirmation.
-  </p>
-</article>
-
-<section class="role">
-  <p class="eyebrow">WORKING APPROACH</p>
-  <h2>How I contribute</h2>
-  <ul>
-    <li><strong>Structure:</strong> organise information, responsibilities and follow-ups.</li>
-    <li><strong>Coordination:</strong> help stakeholders stay aligned on requirements and progress.</li>
-    <li><strong>Analysis:</strong> use data and reporting to make operational information easier to understand.</li>
-    <li><strong>Integrity:</strong> distinguish personal contributions from wider team and business outcomes.</li>
-  </ul>
-</section>
-
-<p><a href="index.html">← Back to homepage</a></p>
-
-  </main>  <footer>
     <div class="container">
-      <p>Sahil Patil · Operations, Analytics &amp; Technology</p>
-      <p>© <span id="year">2026</span> Sahil Patil</p>
+      <div class="stats reveal">
+        <div class="stat">
+          <strong>2025–2026</strong>
+          <span>Programme and operations experience at PHN Technology</span>
+        </div>
+        <div class="stat">
+          <strong>10,000+</strong>
+          <span>Reported LMS learner scale during the broader operating period</span>
+        </div>
+        <div class="stat">
+          <strong>Data + Delivery</strong>
+          <span>Cross-functional operations and analytical workflows</span>
+        </div>
+      </div>
+
+      <section id="professional-experience">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 · Professional experience</p>
+          <h2>Where I have contributed</h2>
+          <p>
+            Responsibilities below describe the work I supported. Organisational
+            scale figures are separated from individual contributions.
+          </p>
+        </div>
+
+        <article class="experience-card reveal">
+          <div class="job-header">
+            <div>
+              <h3>PHN Technology Pvt. Ltd.</h3>
+              <p class="job-title">Program &amp; Operations Associate</p>
+              <p class="job-meta">June 2025 – October 2026 · Pune, India</p>
+            </div>
+            <span class="tag">Full-time experience</span>
+          </div>
+
+          <p class="job-summary">
+            Supported programme and operational activities across learning
+            management systems, institutional partnerships, technology
+            education initiatives and structured reporting. The role combined
+            stakeholder communication with practical data and workflow support.
+          </p>
+
+          <div class="two-col">
+            <div class="detail">
+              <h4>Programme and business operations</h4>
+              <ul>
+                <li>Supported coordination across institutional and internal stakeholders.</li>
+                <li>Participated in college visits, seminars and programme discussions.</li>
+                <li>Helped align institutional requirements with available technology-education offerings.</li>
+                <li>Supported follow-up, reporting and communication across operational activities.</li>
+                <li>Worked across LMS-related activities and broader programme operations.</li>
+              </ul>
+            </div>
+
+            <div class="detail">
+              <h4>Data and technology workflows</h4>
+              <ul>
+                <li>Worked with LMS records and institutional information.</li>
+                <li>Supported data cleaning and consistency checks for college and contact information.</li>
+                <li>Used Excel and Python-oriented workflows to organise and analyse information.</li>
+                <li>Worked with reporting processes connecting MySQL, Excel, Python and Power BI.</li>
+                <li>Supported structured candidate-record and resume-review workflows.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="impact-grid">
+            <div class="impact">
+              <strong>80+</strong>
+              <span>College visits and seminars associated with the work context</span>
+            </div>
+            <div class="impact">
+              <strong>10,000+</strong>
+              <span>Reported LMS learner scale</span>
+            </div>
+            <div class="impact">
+              <strong>200+</strong>
+              <span>Reported wider organisational MoUs</span>
+            </div>
+          </div>
+
+          <p class="callout">
+            These are reported organisational figures and work-context indicators.
+            They do not mean I personally generated every learner, visit or
+            institutional agreement, and they are not independently audited.
+          </p>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="job-header">
+            <div>
+              <h3>Diginix AI</h3>
+              <p class="job-title">Analytics and Client Coordination Support</p>
+              <p class="job-meta">Approximately 3 months · 2024</p>
+            </div>
+            <span class="tag">Technology + Communication</span>
+          </div>
+
+          <p class="job-summary">
+            Contributed to work associated with the Trader OTT platform,
+            combining analytical support with communication and coordination
+            involving the user, team and client.
+          </p>
+
+          <div class="two-col">
+            <div class="detail">
+              <h4>Work supported</h4>
+              <ul>
+                <li>Supported data-related tasks and reporting activities.</li>
+                <li>Helped communicate requirements and updates between the team and client.</li>
+                <li>Contributed to coordination around platform-related work.</li>
+              </ul>
+            </div>
+
+            <div class="detail">
+              <h4>Professional skills developed</h4>
+              <ul>
+                <li>Client communication and requirement clarification.</li>
+                <li>Structured reporting and information sharing.</li>
+                <li>Working with a team on technology-oriented deliverables.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="callout">
+            The exact employment title and dates have not been independently
+            established here, so this experience is described by the work
+            supported rather than assigning an unverified formal title.
+          </p>
+        </article>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">02 · Capability areas</p>
+          <h2>A cross-functional skill set</h2>
+          <p>
+            My experience is strongest where operational execution,
+            stakeholder communication and data-informed problem-solving meet.
+          </p>
+        </div>
+
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Programme and business operations</h3>
+            <div class="chips">
+              <span class="chip">Programme coordination</span>
+              <span class="chip">Operations support</span>
+              <span class="chip">Stakeholder communication</span>
+              <span class="chip">Institutional engagement</span>
+              <span class="chip">Process documentation</span>
+              <span class="chip">Follow-up tracking</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Data and analytics</h3>
+            <div class="chips">
+              <span class="chip">Excel</span>
+              <span class="chip">SQL / MySQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">Pandas</span>
+              <span class="chip">NumPy</span>
+              <span class="chip">Power BI</span>
+              <span class="chip">Data cleaning</span>
+              <span class="chip">Reporting</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Technology and analytical exploration</h3>
+            <div class="chips">
+              <span class="chip">scikit-learn</span>
+              <span class="chip">Plotly</span>
+              <span class="chip">Seaborn</span>
+              <span class="chip">Data visualisation</span>
+              <span class="chip">Machine learning concepts</span>
+              <span class="chip">Workflow analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Business-facing capabilities</h3>
+            <div class="chips">
+              <span class="chip">Client communication</span>
+              <span class="chip">Requirement coordination</span>
+              <span class="chip">Problem-solving</span>
+              <span class="chip">Cross-functional teamwork</span>
+              <span class="chip">Operational reporting</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="callout">
+          Skills reflect tools and methods used or explored across work and
+          projects. The presence of a tool here does not imply advanced mastery
+          or that every tool was used in a production environment.
+        </p>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">03 · Next step</p>
+          <h2>Explore the work in more detail</h2>
+          <p>
+            See the case studies for workflow diagrams, project context and
+            the distinction between reported scale and personal contribution.
+          </p>
+        </div>
+
+        <div class="next-links">
+          <a class="next-link" href="case-studies.html#lms">
+            <strong>LMS operations and analytics →</strong>
+            <span>Data quality, reporting and learner-platform context.</span>
+          </a>
+
+          <a class="next-link" href="case-studies.html#ipp">
+            <strong>Institutional partnerships →</strong>
+            <span>Programme coordination and stakeholder engagement.</span>
+          </a>
+
+          <a class="next-link" href="case-studies.html#recruitment">
+            <strong>Recruitment workflow →</strong>
+            <span>Structured candidate records and screening support.</span>
+          </a>
+        </div>
+      </section>
     </div>
-  </footer>  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script></body>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sahil Patil · Professional Portfolio</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const toggle = document.getElementById("menuToggle");
+      const links = document.getElementById("navLinks");
+
+      toggle.addEventListener("click", function () {
+        const open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.textContent = open ? "Close ✕" : "Menu ☰";
+      });
+
+      links.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "Menu ☰";
+        });
+      });
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      const elements = document.querySelectorAll(".reveal");
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if ("IntersectionObserver" in window && !reducedMotion) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        elements.forEach(function (element) {
+          observer.observe(element);
+        });
+      } else {
+        elements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+      }
+    })();
+  </script>
+</body>
 </html>
