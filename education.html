@@ -3,252 +3,872 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education & Skills | Sahil Patil</title>
-  <meta name="description" content="Sahil Patil's education, technical skills and professional capabilities.">
+  <meta name="description" content="Sahil Patil's education, Artificial Intelligence and Data Science background, technical skills and professional development.">
+  <meta name="theme-color" content="#080b12">
+  <title>Education &amp; Skills | Sahil Patil</title>
+
   <style>
     :root {
-      --bg: #080d18;
-      --panel: #101a2b;
-      --border: #23324a;
-      --text: #edf3ff;
-      --muted: #a5b3c9;
-      --blue: #65a5ff;
-      --cyan: #67e8f9;
+      --bg: #080b12;
+      --panel: #101827;
+      --panel2: #131e30;
+      --border: #26354b;
+      --text: #f4f7fc;
+      --muted: #a8b5c9;
+      --blue: #86b5ff;
+      --cyan: #66e2d0;
+      --accent: #4c8dff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
     body {
-      margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(76,141,255,.12), transparent 36rem),
+        var(--bg);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.7;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--cyan); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 7%;
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,11,18,.92);
+      border-bottom: 1px solid rgba(134,181,255,.15);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
 
-    .brand { color: var(--text); font-weight: 800; letter-spacing: 1px; }
+    .brand {
+      font-weight: 850;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
 
-    nav { display: flex; flex-wrap: wrap; gap: 18px; }
-    nav a { color: var(--muted); font-size: 14px; }
-    nav a.active, nav a:hover { color: var(--blue); }
+    .brand span {
+      color: var(--cyan);
+    }
 
-    main { max-width: 1050px; margin: auto; padding: 65px 7%; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--cyan);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 85px 0 55px;
+    }
 
     .eyebrow {
       color: var(--cyan);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 700;
+      margin-bottom: 15px;
     }
 
-    h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.12; margin: 12px 0 20px; }
-    h2 { font-size: 25px; margin-top: 0; }
-    h3 { font-size: 18px; margin-bottom: 8px; }
-    p { color: var(--muted); }
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      letter-spacing: -.065em;
+      line-height: 1.05;
+      max-width: 900px;
+      margin-bottom: 22px;
+    }
 
-    .intro { max-width: 740px; margin-bottom: 38px; }
+    .gradient {
+      background: linear-gradient(100deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-    .panel {
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 11px 17px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+      line-height: 1.2;
+      letter-spacing: -.045em;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .education-card {
+      background: rgba(16,24,39,.94);
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      padding: clamp(23px,4vw,40px);
+    }
+
+    .degree-label {
+      display: inline-block;
+      color: var(--cyan);
+      background: rgba(102,226,208,.07);
+      border: 1px solid rgba(102,226,208,.25);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: .76rem;
+      font-weight: 750;
+      margin-bottom: 18px;
+    }
+
+    .education-card h3 {
+      font-size: clamp(1.5rem,3.5vw,2.35rem);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+      margin-bottom: 12px;
+    }
+
+    .institution {
+      color: var(--blue);
+      font-weight: 750;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 22px;
+    }
+
+    .education-copy {
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    .academic-stats {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .academic-stat {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .academic-stat strong {
+      display: block;
+      font-size: 1.7rem;
+      color: var(--cyan);
+      letter-spacing: -.04em;
+    }
+
+    .academic-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 5px;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 15px 17px;
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 10px 10px 0;
+      background: rgba(102,226,208,.05);
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 15px;
+    }
+
+    .skill-card {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      margin: 22px 0;
+      border-radius: 17px;
+      padding: 24px;
     }
 
-    .date {
-      color: var(--cyan);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .grid {
+    .skill-icon {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .skill {
-      border: 1px solid var(--border);
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      background: #192841;
+      color: var(--cyan);
+      border: 1px solid #304765;
       border-radius: 12px;
-      padding: 18px;
-      background: #0c1423;
+      font-size: 1.1rem;
+      font-weight: 850;
+      margin-bottom: 16px;
     }
 
-    .skill h3 { color: var(--blue); margin-top: 0; }
-    .skill p { margin-bottom: 0; font-size: 14px; }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid #345078;
-      border-radius: 30px;
-      color: var(--blue);
-      padding: 4px 10px;
-      margin: 4px 5px 4px 0;
-      font-size: 12px;
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 9px;
     }
 
-    .note {
-      border-left: 3px solid var(--blue);
-      padding: 12px 16px;
-      background: #0c1423;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
+    .skill-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      color: var(--muted);
+      background: #172337;
+      border: 1px solid #2b3c53;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: .79rem;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .approach-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .approach-card b {
+      display: block;
+      color: var(--cyan);
+      font-size: .8rem;
+      margin-bottom: 10px;
+      letter-spacing: .08em;
+    }
+
+    .approach-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .approach-card p {
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .career-panel {
+      background: linear-gradient(135deg,#14233a,#101827);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(24px,4vw,36px);
+    }
+
+    .career-panel h2 {
+      font-size: clamp(1.7rem,4vw,2.4rem);
+      letter-spacing: -.04em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .career-panel p {
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .career-tags span {
+      border: 1px solid #354b68;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .83rem;
+      color: var(--text);
+      background: rgba(8,11,18,.35);
+    }
+
+    .next-links {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .next-link {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform .2s,border-color .2s;
+    }
+
+    .next-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+    }
+
+    .next-link strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .next-link span {
+      color: var(--muted);
+      font-size: .85rem;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 25px;
+      padding: 28px 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: .82rem;
     }
 
-    @media (max-width: 600px) {
-      header { padding: 18px 5%; }
-      main { padding: 45px 5%; }
-      .panel { padding: 21px; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease,transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(max-width:800px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:650px) {
+      .container {
+        width: min(100% - 28px,1100px);
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 16px 22px 20px;
+        background: #0b101b;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 0;
+        font-size: .94rem;
+      }
+
+      .hero {
+        padding: 58px 0 38px;
+      }
+
+      .academic-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-grid,
+      .next-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a class="brand" href="index.html">SAHIL PATIL</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a class="active" href="education.html">Education</a>
-      <a href="contact.html">Contact</a>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="index.html">SAHIL<span>.</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >Menu ☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="education.html" aria-current="page">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
-  </header>
+  </div>
 
   <main>
-    <p class="eyebrow">Education & Capabilities</p>
-    <h1>Building at the intersection of technology and business.</h1>
-    <p class="intro">
-      My background in Artificial Intelligence and Data Science supports
-      an interest in solving operational problems through structured
-      analysis, technology and cross-functional coordination.
-    </p>
+    <header class="hero container">
+      <p class="eyebrow">Education · Technical foundation · Career development</p>
 
-    <section class="panel">
-      <p class="eyebrow">Academic Background</p>
-      <h2>Bachelor of Engineering / Technology</h2>
-      <h3>Artificial Intelligence & Data Science</h3>
-      <p>D. Y. Patil College of Engineering, Akurdi, Pune</p>
-      <div class="date">2021 – 2025</div>
-      <div style="margin-top: 18px;">
-        <span class="tag">CGPA: 8.0 / 10</span>
-        <span class="tag">Data Science</span>
-        <span class="tag">Artificial Intelligence</span>
+      <h1>
+        Understanding technology.
+        <span class="gradient">Solving business problems.</span>
+      </h1>
+
+      <p class="hero-copy">
+        My academic background in Artificial Intelligence and Data Science
+        provides a foundation for combining analytical thinking, technology
+        and practical business operations.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="#education">Explore education ↓</a>
+        <a class="button" href="case-studies.html">Explore applied work</a>
       </div>
-      <p>
-        Academic focus included computing, analytical problem-solving and
-        applying technology to practical problems.
-      </p>
-      <p class="note">
-        The university degree/convocation certificate is pending issuance.
-        This page records the completed course of study and does not claim
-        that the final certificate has been received.
-      </p>
-    </section>
+    </header>
 
-    <section class="panel">
-      <p class="eyebrow">Technical Toolkit</p>
-      <h2>Tools & Technologies</h2>
-
-      <div class="grid">
-        <div class="skill">
-          <h3>Data Analysis</h3>
-          <p>Python, Pandas, NumPy, Excel, data cleaning and exploratory analysis.</p>
+    <div class="container">
+      <section id="education" class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">01 · Academic background</p>
+          <h2>Education</h2>
+          <p>
+            Formal technical education supported by practical exposure to
+            analytics, systems and operational workflows.
+          </p>
         </div>
 
-        <div class="skill">
-          <h3>Databases</h3>
-          <p>MySQL, MongoDB and structured data handling.</p>
+        <article class="education-card">
+          <span class="degree-label">Undergraduate degree</span>
+
+          <h3>B.E. / B.Tech in Artificial Intelligence &amp; Data Science</h3>
+
+          <p class="institution">
+            D. Y. Patil College of Engineering, Akurdi, Pune
+          </p>
+
+          <p class="education-meta">
+            2021–2025 · CGPA: 8.0 / 10
+          </p>
+
+          <p class="education-copy">
+            My degree focused on the technical foundations of AI and data
+            science, including programming, data handling, analytical
+            problem-solving and machine learning concepts. I have applied
+            this foundation to practical work involving operational data,
+            reporting and technology-oriented projects.
+          </p>
+
+          <div class="academic-stats">
+            <div class="academic-stat">
+              <strong>8.0/10</strong>
+              <span>Reported CGPA</span>
+            </div>
+
+            <div class="academic-stat">
+              <strong>2021–2025</strong>
+              <span>Undergraduate study period</span>
+            </div>
+
+            <div class="academic-stat">
+              <strong>AI + Data</strong>
+              <span>Academic specialisation</span>
+            </div>
+          </div>
+
+          <p class="notice">
+            <strong>Document status:</strong> The university degree/convocation
+            certificate was still pending issuance as of October 2026.
+            This page describes the completed course of study and does not
+            claim that the final certificate has been received.
+          </p>
+        </article>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">02 · Technical toolkit</p>
+          <h2>Skills and working knowledge</h2>
+          <p>
+            A practical overview of the tools and areas I have used or
+            explored through work and projects. This is not intended as a
+            claim of expert-level proficiency in every technology.
+          </p>
         </div>
 
-        <div class="skill">
-          <h3>Reporting & Visualisation</h3>
-          <p>Power BI, Plotly and Seaborn for reporting and visual exploration.</p>
+        <div class="skill-grid">
+          <article class="skill-card">
+            <div class="skill-icon">01</div>
+            <h3>Data analysis and preparation</h3>
+            <p>
+              Organising records, resolving inconsistencies and preparing
+              information for reporting and analysis.
+            </p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Pandas</span>
+              <span class="chip">NumPy</span>
+              <span class="chip">Excel</span>
+              <span class="chip">Data cleaning</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">02</div>
+            <h3>Databases and business intelligence</h3>
+            <p>
+              Working with structured data and reporting workflows to make
+              information easier to review.
+            </p>
+            <div class="chips">
+              <span class="chip">SQL</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">Power BI</span>
+              <span class="chip">Data visualisation</span>
+              <span class="chip">Plotly</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">03</div>
+            <h3>AI and analytical methods</h3>
+            <p>
+              Academic and exploratory exposure to methods for discovering
+              patterns, organising information and analysing text.
+            </p>
+            <div class="chips">
+              <span class="chip">Machine learning</span>
+              <span class="chip">scikit-learn</span>
+              <span class="chip">Clustering concepts</span>
+              <span class="chip">Regression concepts</span>
+              <span class="chip">NLP concepts</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">04</div>
+            <h3>Programme and business operations</h3>
+            <p>
+              Coordinating activities, supporting stakeholders and
+              structuring operational information.
+            </p>
+            <div class="chips">
+              <span class="chip">Programme coordination</span>
+              <span class="chip">Operations support</span>
+              <span class="chip">Stakeholder communication</span>
+              <span class="chip">Reporting</span>
+              <span class="chip">Process improvement</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">03 · My approach</p>
+          <h2>How I connect the pieces</h2>
+          <p>
+            I aim to understand the operational problem before choosing
+            the tools or designing a solution.
+          </p>
         </div>
 
-        <div class="skill">
-          <h3>Machine Learning Concepts</h3>
-          <p>Scikit-learn, clustering, regression and recommendation approaches.</p>
+        <div class="approach-grid">
+          <article class="approach-card">
+            <b>STEP 01</b>
+            <h3>Understand the problem</h3>
+            <p>
+              Clarify the requirement, the people involved, the available
+              information and the expected outcome.
+            </p>
+          </article>
+
+          <article class="approach-card">
+            <b>STEP 02</b>
+            <h3>Structure the information</h3>
+            <p>
+              Organise data, document the workflow and identify gaps or
+              inconsistencies that need attention.
+            </p>
+          </article>
+
+          <article class="approach-card">
+            <b>STEP 03</b>
+            <h3>Support delivery</h3>
+            <p>
+              Coordinate with stakeholders and use appropriate tools to
+              support analysis, reporting and execution.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="career-panel reveal">
+        <p class="eyebrow">04 · Career direction</p>
+        <h2>Where I want to apply this foundation</h2>
+        <p>
+          I am interested in roles that combine structured problem-solving,
+          technology and business execution. I am particularly drawn to
+          environments where data supports operational decisions and teams
+          need someone who can connect technical details with business needs.
+        </p>
+
+        <div class="career-tags">
+          <span>Business Analyst</span>
+          <span>Data Analyst</span>
+          <span>Operations Analyst</span>
+          <span>Business Operations</span>
+          <span>Programme Operations</span>
+          <span>Technical Implementation</span>
+          <span>Product Operations</span>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">05 · Continue exploring</p>
+          <h2>Education in practice</h2>
         </div>
 
-        <div class="skill">
-          <h3>Web Technologies</h3>
-          <p>React, Vite, Node.js and Express in an academic prototype context.</p>
+        <div class="next-links">
+          <a class="next-link" href="experience.html">
+            <strong>Professional experience →</strong>
+            <span>Explore the operational and technology work I have supported.</span>
+          </a>
+
+          <a class="next-link" href="case-studies.html">
+            <strong>Case studies →</strong>
+            <span>Review practical workflows and project context.</span>
+          </a>
+
+          <a class="next-link" href="contact.html">
+            <strong>Contact me →</strong>
+            <span>Connect regarding suitable roles and opportunities.</span>
+          </a>
         </div>
-
-        <div class="skill">
-          <h3>Digital Technology Concepts</h3>
-          <p>IPFS, MetaMask and blockchain test-network concepts explored in a prototype.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel">
-      <p class="eyebrow">Professional Capabilities</p>
-      <h2>How I Work</h2>
-
-      <div class="grid">
-        <div class="skill">
-          <h3>Operations</h3>
-          <p>Workflow coordination, operational reporting, documentation and follow-up.</p>
-        </div>
-
-        <div class="skill">
-          <h3>Programme Coordination</h3>
-          <p>Stakeholder communication, institutional coordination and execution support.</p>
-        </div>
-
-        <div class="skill">
-          <h3>Analytical Thinking</h3>
-          <p>Structuring problems, checking data quality and translating information into insights.</p>
-        </div>
-
-        <div class="skill">
-          <h3>Technology & Business</h3>
-          <p>Connecting technical workflows with operational requirements and user needs.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel">
-      <p class="eyebrow">Career Direction</p>
-      <h2>Roles I’m Interested In</h2>
-      <p>
-        Data Analyst · Business Analyst · Operations Analyst · Business
-        Operations · Programme Operations · Project Coordination ·
-        Product Operations · Technology Implementation
-      </p>
-      <p>
-        I’m particularly interested in roles where data, people, processes
-        and technology come together to solve real business problems.
-      </p>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
-    © 2026 Sahil Patil · Education · Analytics · Operations
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sahil Patil · Professional Portfolio</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const toggle = document.getElementById("menuToggle");
+      const links = document.getElementById("navLinks");
+
+      toggle.addEventListener("click", function () {
+        const open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.textContent = open ? "Close ✕" : "Menu ☰";
+      });
+
+      links.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "Menu ☰";
+        });
+      });
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      const elements = document.querySelectorAll(".reveal");
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if ("IntersectionObserver" in window && !reducedMotion) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        elements.forEach(function (element) {
+          observer.observe(element);
+        });
+      } else {
+        elements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
