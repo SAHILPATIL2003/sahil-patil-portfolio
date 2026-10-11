@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies | Sahil Patil</title>
+  <meta name="description" content="Selected operations, analytics and technology case studies by Sahil Patil.">
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #101a2b;
+      --border: #23324a;
+      --text: #edf3ff;
+      --muted: #a5b3c9;
+      --blue: #65a5ff;
+      --cyan: #67e8f9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--cyan); }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand { color: var(--text); font-weight: 800; letter-spacing: 1px; }
+
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    nav a { color: var(--muted); font-size: 14px; }
+    nav a.active, nav a:hover { color: var(--blue); }
+
+    main { max-width: 1100px; margin: auto; padding: 65px 7%; }
+
+    .eyebrow {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.12; margin: 12px 0 20px; }
+    h2 { font-size: 25px; margin-top: 0; }
+    h3 { margin-bottom: 8px; font-size: 19px; }
+    p { color: var(--muted); }
+
+    .intro { max-width: 760px; margin-bottom: 38px; }
+
+    .case {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin: 22px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #345078;
+      border-radius: 30px;
+      color: var(--blue);
+      padding: 4px 10px;
+      margin: 4px 5px 4px 0;
+      font-size: 12px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .detail {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .detail strong { display: block; color: var(--cyan); margin-bottom: 5px; }
+    ul { color: var(--muted); padding-left: 22px; }
+    li { margin: 8px 0; }
+
+    .note {
+      border-left: 3px solid var(--blue);
+      padding: 12px 16px;
+      background: #0c1423;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 18px 5%; }
+      main { padding: 45px 5%; }
+      .case { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">SAHIL PATIL</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a class="active" href="case-studies.html">Case Studies</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Selected Work</p>
+    <h1>Turning operational challenges into structured solutions.</h1>
+    <p class="intro">
+      These case studies describe selected work across learning-platform
+      operations, institutional partnerships and analytics workflows.
+      They focus on the problem, the approach and the business relevance,
+      while respecting data privacy and the limits of available evidence.
+    </p>
+
+    <section class="case">
+      <span class="tag">Operations</span>
+      <span class="tag">Learning Technology</span>
+      <span class="tag">Reporting</span>
+      <h2>01 — Learning Management System Operations & Analytics</h2>
+
+      <h3>The challenge</h3>
+      <p>
+        As a learning platform expanded, consistent learner records,
+        usable reporting and visibility into engagement became increasingly
+        important for operational decision-making.
+      </p>
+
+      <h3>My approach</h3>
+      <ul>
+        <li>Supported LMS operations and coordination across stakeholders.</li>
+        <li>Worked with learner and institutional data to identify inconsistencies,
+            including variations in college names and contact records.</li>
+        <li>Used a workflow involving MySQL, Excel, Python and Power BI to
+            support data preparation, analysis and reporting.</li>
+        <li>Explored analytics approaches for learner segmentation and engagement
+            insights to help inform follow-up and programme planning.</li>
+      </ul>
+
+      <div class="details">
+        <div class="detail">
+          <strong>Reported platform scale</strong>
+          10,000+ active learners
+        </div>
+        <div class="detail">
+          <strong>Earlier baseline</strong>
+          Approximately 2,000 learners
+        </div>
+        <div class="detail">
+          <strong>Workflow</strong>
+          MySQL → Excel → Python → Power BI
+        </div>
+      </div>
+
+      <h3>Business relevance</h3>
+      <p>
+        More consistent records and structured reporting can improve
+        operational visibility, reduce avoidable data-cleaning effort and
+        support better-informed programme decisions.
+      </p>
+    </section>
+
+    <section class="case">
+      <span class="tag">Business Operations</span>
+      <span class="tag">Institutional Partnerships</span>
+      <span class="tag">Programme Coordination</span>
+      <h2>02 — Institutional Partnership Programme</h2>
+
+      <h3>The challenge</h3>
+      <p>
+        Colleges often need connected technology-learning solutions rather
+        than isolated activities. Programme design must account for student
+        needs, job-market relevance, trainer availability and laboratory
+        readiness.
+      </p>
+
+      <h3>My approach</h3>
+      <ul>
+        <li>Supported institutional outreach, college visits and seminars.</li>
+        <li>Contributed to coordination around technology programmes and
+            institutional requirements.</li>
+        <li>Helped connect programme discussions with factors such as student
+            numbers, relevant technology domains, trainer capacity and lab
+            requirements.</li>
+        <li>Worked across stakeholders to support follow-up and programme
+            execution.</li>
+      </ul>
+
+      <div class="details">
+        <div class="detail">
+          <strong>Outreach activity</strong>
+          80+ college visits and seminars
+        </div>
+        <div class="detail">
+          <strong>Reported programme context</strong>
+          200+ MoUs across the wider organisation
+        </div>
+        <div class="detail">
+          <strong>Focus</strong>
+          Institutional coordination and technology education
+        </div>
+      </div>
+
+      <h3>Business relevance</h3>
+      <p>
+        A structured partnership approach can help align institutional
+        requirements with programme delivery, technical resources and
+        longer-term education objectives.
+      </p>
+    </section>
+
+    <section class="case">
+      <span class="tag">Data Operations</span>
+      <span class="tag">Recruitment Workflow</span>
+      <span class="tag">Data Quality</span>
+      <h2>03 — Candidate Data & Screening Workflow Support</h2>
+
+      <h3>The challenge</h3>
+      <p>
+        Large candidate datasets require consistent screening criteria,
+        organised records and traceable outputs so teams can review
+        information more efficiently.
+      </p>
+
+      <h3>My approach</h3>
+      <ul>
+        <li>Supported workflows involving candidate records and screening data.</li>
+        <li>Worked with structured outputs in spreadsheets, including
+            candidate references and resume links.</li>
+        <li>Worked with a stated 55% screening threshold as part of the
+            workflow context.</li>
+        <li>Considered data consistency and the importance of human review,
+            especially where automated screening may miss relevant candidates.</li>
+      </ul>
+
+      <div class="details">
+        <div class="detail">
+          <strong>Reported dataset scale</strong>
+          105,000+ registered or eligible candidates
+        </div>
+        <div class="detail">
+          <strong>Screening context</strong>
+          55% threshold
+        </div>
+        <div class="detail">
+          <strong>Tools and outputs</strong>
+          Excel, Google Sheets and MySQL
+        </div>
+      </div>
+
+      <h3>Business relevance</h3>
+      <p>
+        Organised candidate data can make screening outputs easier to review
+        and help teams maintain a more consistent process. A threshold alone
+        does not establish screening accuracy or hiring outcomes.
+      </p>
+    </section>
+
+    <section class="case">
+      <span class="tag">Prototype</span>
+      <span class="tag">Web Development</span>
+      <span class="tag">Blockchain Concepts</span>
+      <h2>04 — Academic Healthcare Records Prototype</h2>
+
+      <h3>Project overview</h3>
+      <p>
+        An academic prototype exploring a digital workflow for healthcare
+        records, with an emphasis on access flow and decentralised-storage
+        concepts.
+      </p>
+
+      <h3>Technology explored</h3>
+      <ul>
+        <li>React and Vite for the user interface.</li>
+        <li>Node.js and Express for backend services.</li>
+        <li>MongoDB for application data.</li>
+        <li>Pinata IPFS, MetaMask and Polygon Mumbai test-network concepts.</li>
+        <li>Patient-code and OTP-style access flow concepts.</li>
+      </ul>
+
+      <p class="note">
+        This is an academic prototype, not a verified production healthcare
+        system. It should not be interpreted as clinically validated or
+        suitable for storing real patient information.
+      </p>
+    </section>
+
+    <p class="note">
+      <strong>Evidence and attribution:</strong> Scale figures on this page
+      are reported organisational context supplied for this portfolio.
+      They are not claims that one individual independently caused the
+      outcomes. Detailed historical source data may be incomplete, and
+      illustrative or reconstructed datasets must be labelled before use
+      in any future charts or performance claims.
+    </p>
+  </main>
+
+  <footer>
+    © 2026 Sahil Patil · Operations · Analytics · Technology
+  </footer>
+</body>
+</html>
