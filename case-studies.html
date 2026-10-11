@@ -3,329 +3,1239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional case studies by Sahil Patil across business operations, LMS analytics, institutional partnerships and recruitment workflows.">
+  <meta name="theme-color" content="#080b12">
   <title>Case Studies | Sahil Patil</title>
-  <meta name="description" content="Selected operations, analytics and technology case studies by Sahil Patil.">
+
   <style>
     :root {
-      --bg: #080d18;
-      --panel: #101a2b;
-      --border: #23324a;
-      --text: #edf3ff;
-      --muted: #a5b3c9;
-      --blue: #65a5ff;
-      --cyan: #67e8f9;
+      --bg: #080b12;
+      --panel: #101827;
+      --panel2: #131e30;
+      --border: #26354b;
+      --text: #f4f7fc;
+      --muted: #a8b5c9;
+      --blue: #86b5ff;
+      --cyan: #66e2d0;
+      --accent: #4c8dff;
+      --radius: 20px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
     body {
-      margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(76,141,255,.12), transparent 36rem),
+        var(--bg);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.7;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--cyan); }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .brand { color: var(--text); font-weight: 800; letter-spacing: 1px; }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
 
-    nav { display: flex; flex-wrap: wrap; gap: 18px; }
-    nav a { color: var(--muted); font-size: 14px; }
-    nav a.active, nav a:hover { color: var(--blue); }
+    button {
+      font: inherit;
+    }
 
-    main { max-width: 1100px; margin: auto; padding: 65px 7%; }
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 11, 18, .91);
+      border-bottom: 1px solid rgba(134, 181, 255, .15);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 850;
+      letter-spacing: -.04em;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .88rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--cyan);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 86px 0 56px;
+    }
 
     .eyebrow {
       color: var(--cyan);
+      font-size: .77rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 700;
+      letter-spacing: .16em;
+      font-weight: 800;
+      margin-bottom: 16px;
     }
 
-    h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.12; margin: 12px 0 20px; }
-    h2 { font-size: 25px; margin-top: 0; }
-    h3 { margin-bottom: 8px; font-size: 19px; }
-    p { color: var(--muted); }
+    h1 {
+      max-width: 850px;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
+      margin-bottom: 22px;
+    }
 
-    .intro { max-width: 760px; margin-bottom: 38px; }
+    .gradient {
+      background: linear-gradient(100deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-    .case {
-      background: var(--panel);
+    .hero-copy {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      margin: 22px 0;
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 11px 17px;
+      font-weight: 700;
+      font-size: .9rem;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 12px 0 66px;
+    }
+
+    .metric {
+      padding: 22px;
+      background: linear-gradient(145deg, var(--panel2), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      min-width: 0;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--blue);
+      font-size: clamp(1.8rem, 3.4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -.055em;
+      overflow-wrap: anywhere;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    section {
+      margin-bottom: 76px;
+    }
+
+    .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: -.045em;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 740px;
+    }
+
+    .case-card {
+      border: 1px solid var(--border);
+      background: rgba(16, 24, 39, .92);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 38px);
+      margin-bottom: 22px;
+      overflow: hidden;
+      scroll-margin-top: 100px;
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .case-number {
+      color: var(--cyan);
+      font-size: .76rem;
+      letter-spacing: .14em;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .case-card h3 {
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      letter-spacing: -.04em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .case-subtitle {
+      color: var(--muted);
+      max-width: 760px;
     }
 
     .tag {
       display: inline-block;
-      border: 1px solid #345078;
-      border-radius: 30px;
-      color: var(--blue);
-      padding: 4px 10px;
-      margin: 4px 5px 4px 0;
-      font-size: 12px;
+      border: 1px solid rgba(102, 226, 208, .25);
+      background: rgba(102, 226, 208, .07);
+      color: var(--cyan);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .73rem;
+      white-space: nowrap;
     }
 
-    .details {
+    .case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
     }
 
-    .detail {
+    .detail h4 {
+      font-size: 1rem;
+      margin-bottom: 9px;
+      color: var(--blue);
+    }
+
+    .detail p,
+    .detail li {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .detail ul {
+      padding-left: 20px;
+    }
+
+    .detail li {
+      margin-bottom: 7px;
+    }
+
+    .visual-panel {
+      background: #0b1220;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
+      border-radius: 16px;
+      padding: 22px;
+      margin-top: 20px;
+      min-width: 0;
     }
 
-    .detail strong { display: block; color: var(--cyan); margin-bottom: 5px; }
-    ul { color: var(--muted); padding-left: 22px; }
-    li { margin: 8px 0; }
+    .visual-title {
+      font-size: .83rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .pipeline-step {
+      border: 1px solid #344965;
+      background: #131f32;
+      padding: 12px 13px;
+      border-radius: 10px;
+      font-size: .82rem;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .pipeline-arrow {
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .scale-row {
+      display: grid;
+      grid-template-columns: 115px minmax(0, 1fr) 70px;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .bar-track {
+      height: 14px;
+      background: #1c2a3d;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent), var(--cyan));
+      transition: width 1.1s ease;
+    }
+
+    .bar-fill.animate {
+      width: var(--bar-width);
+    }
+
+    .bar-value {
+      text-align: right;
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .callout {
+      border-left: 3px solid var(--cyan);
+      padding: 13px 16px;
+      margin-top: 22px;
+      background: rgba(102, 226, 208, .05);
+      border-radius: 0 10px 10px 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .process-item {
+      background: #131f32;
+      border: 1px solid #2b3c53;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+    .process-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .9rem;
+    }
+
+    .process-item span {
+      display: block;
+      color: var(--muted);
+      font-size: .81rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .step {
+      border: 1px solid #2b3c53;
+      background: #131f32;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .step b {
+      color: var(--cyan);
+      display: block;
+      margin-bottom: 7px;
+      font-size: .76rem;
+    }
+
+    .step span {
+      font-size: .82rem;
+      color: var(--muted);
+    }
 
     .note {
-      border-left: 3px solid var(--blue);
-      padding: 12px 16px;
-      background: #0c1423;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
+      border: 1px solid var(--border);
+      background: rgba(19, 30, 48, .6);
+      border-radius: 14px;
+      padding: 20px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .note strong {
+      color: var(--text);
+    }
+
+    .next-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .next-link {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .next-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+    }
+
+    .next-link strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .next-link span {
+      color: var(--muted);
+      font-size: .85rem;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 25px;
+      padding: 28px 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: .82rem;
     }
 
-    @media (max-width: 600px) {
-      header { padding: 18px 5%; }
-      main { padding: 45px 5%; }
-      .case { padding: 21px; }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 16px 22px 20px;
+        background: #0b101b;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 0;
+        font-size: .94rem;
+      }
+
+      .hero {
+        padding: 58px 0 36px;
+      }
+
+      .case-top {
+        flex-direction: column;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .next-links {
+        grid-template-columns: 1fr;
+      }
+
+      .scale-row {
+        grid-template-columns: 88px minmax(0, 1fr) 60px;
+        gap: 8px;
+        font-size: .75rem;
+      }
+
+      .visual-panel {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .metrics {
+        gap: 9px;
+      }
+
+      .metric {
+        padding: 15px;
+      }
+
+      .metric strong {
+        font-size: 1.7rem;
+      }
+
+      .steps,
+      .process-list {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline-step {
+        font-size: .75rem;
+        padding: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a class="brand" href="index.html">SAHIL PATIL</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a class="active" href="case-studies.html">Case Studies</a>
-      <a href="education.html">Education</a>
-      <a href="contact.html">Contact</a>
+  <div class="nav-wrap">
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="index.html">SAHIL<span>.</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >Menu ☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="case-studies.html" aria-current="page">Case Studies</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
-  </header>
+  </div>
 
   <main>
-    <p class="eyebrow">Selected Work</p>
-    <h1>Turning operational challenges into structured solutions.</h1>
-    <p class="intro">
-      These case studies describe selected work across learning-platform
-      operations, institutional partnerships and analytics workflows.
-      They focus on the problem, the approach and the business relevance,
-      while respecting data privacy and the limits of available evidence.
-    </p>
+    <header class="hero container">
+      <p class="eyebrow">Selected work · Operations · Analytics · Technology</p>
 
-    <section class="case">
-      <span class="tag">Operations</span>
-      <span class="tag">Learning Technology</span>
-      <span class="tag">Reporting</span>
-      <h2>01 — Learning Management System Operations & Analytics</h2>
+      <h1>
+        Turning complex work into
+        <span class="gradient">structured outcomes.</span>
+      </h1>
 
-      <h3>The challenge</h3>
-      <p>
-        As a learning platform expanded, consistent learner records,
-        usable reporting and visibility into engagement became increasingly
-        important for operational decision-making.
+      <p class="hero-copy">
+        A closer look at my work across learning-platform operations,
+        institutional partnerships, recruitment workflows and technology
+        prototypes. Each case study separates the wider organisational
+        context from the work I supported.
       </p>
 
-      <h3>My approach</h3>
-      <ul>
-        <li>Supported LMS operations and coordination across stakeholders.</li>
-        <li>Worked with learner and institutional data to identify inconsistencies,
-            including variations in college names and contact records.</li>
-        <li>Used a workflow involving MySQL, Excel, Python and Power BI to
-            support data preparation, analysis and reporting.</li>
-        <li>Explored analytics approaches for learner segmentation and engagement
-            insights to help inform follow-up and programme planning.</li>
-      </ul>
+      <div class="hero-actions">
+        <a class="button primary" href="#lms">Explore case studies ↓</a>
+        <a class="button" href="experience.html">Professional experience</a>
+      </div>
+    </header>
 
-      <div class="details">
-        <div class="detail">
-          <strong>Reported platform scale</strong>
-          10,000+ active learners
+    <div class="container">
+      <div class="metrics reveal" aria-label="Reported work context">
+        <div class="metric">
+          <strong><span data-count="10000">10,000</span>+</strong>
+          <span>Reported LMS learner scale</span>
         </div>
-        <div class="detail">
-          <strong>Earlier baseline</strong>
-          Approximately 2,000 learners
+
+        <div class="metric">
+          <strong><span data-count="200">200</span>+</strong>
+          <span>Reported organisational MoUs</span>
         </div>
-        <div class="detail">
-          <strong>Workflow</strong>
-          MySQL → Excel → Python → Power BI
+
+        <div class="metric">
+          <strong><span data-count="80">80</span>+</strong>
+          <span>College visits and seminars</span>
+        </div>
+
+        <div class="metric">
+          <strong><span data-count="105000">105,000</span>+</strong>
+          <span>Registered or eligible candidates</span>
         </div>
       </div>
 
-      <h3>Business relevance</h3>
-      <p>
-        More consistent records and structured reporting can improve
-        operational visibility, reduce avoidable data-cleaning effort and
-        support better-informed programme decisions.
-      </p>
-    </section>
-
-    <section class="case">
-      <span class="tag">Business Operations</span>
-      <span class="tag">Institutional Partnerships</span>
-      <span class="tag">Programme Coordination</span>
-      <h2>02 — Institutional Partnership Programme</h2>
-
-      <h3>The challenge</h3>
-      <p>
-        Colleges often need connected technology-learning solutions rather
-        than isolated activities. Programme design must account for student
-        needs, job-market relevance, trainer availability and laboratory
-        readiness.
-      </p>
-
-      <h3>My approach</h3>
-      <ul>
-        <li>Supported institutional outreach, college visits and seminars.</li>
-        <li>Contributed to coordination around technology programmes and
-            institutional requirements.</li>
-        <li>Helped connect programme discussions with factors such as student
-            numbers, relevant technology domains, trainer capacity and lab
-            requirements.</li>
-        <li>Worked across stakeholders to support follow-up and programme
-            execution.</li>
-      </ul>
-
-      <div class="details">
-        <div class="detail">
-          <strong>Outreach activity</strong>
-          80+ college visits and seminars
+      <section id="lms" class="case-card reveal">
+        <div class="case-top">
+          <div>
+            <p class="case-number">Case study 01 · LMS operations and analytics</p>
+            <h3>Making learner and institutional data more useful</h3>
+            <p class="case-subtitle">
+              Supporting a growing learning management system through data
+              quality work, reporting workflows and operational analysis.
+            </p>
+          </div>
+          <span class="tag">Operations + Analytics</span>
         </div>
-        <div class="detail">
-          <strong>Reported programme context</strong>
-          200+ MoUs across the wider organisation
+
+        <div class="case-grid">
+          <div class="detail">
+            <h4>The challenge</h4>
+            <p>
+              As the LMS expanded, learner and institutional information
+              needed to be organised more consistently so that teams could
+              review activity, identify data-quality issues and support
+              operational decisions.
+            </p>
+
+            <div style="height:20px"></div>
+
+            <h4>My contribution</h4>
+            <ul>
+              <li>Worked with LMS-related records and institutional data.</li>
+              <li>Supported cleaning of inconsistent college names and contact fields.</li>
+              <li>Used spreadsheet workflows and Python-based analysis to organise data.</li>
+              <li>Explored engagement analysis and reporting approaches to support decision-making.</li>
+            </ul>
+          </div>
+
+          <div class="detail">
+            <h4>Tools and workflow</h4>
+            <p>
+              The workflow connected database records, spreadsheet-based
+              checks, Python data preparation and business intelligence
+              reporting.
+            </p>
+
+            <div class="visual-panel">
+              <p class="visual-title">Analytics workflow</p>
+              <div class="pipeline" aria-label="MySQL to Excel to Python to Power BI">
+                <span class="pipeline-step">MySQL</span>
+                <span class="pipeline-arrow">→</span>
+                <span class="pipeline-step">Excel</span>
+                <span class="pipeline-arrow">→</span>
+                <span class="pipeline-step">Python</span>
+                <span class="pipeline-arrow">→</span>
+                <span class="pipeline-step">Power BI</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="detail">
-          <strong>Focus</strong>
-          Institutional coordination and technology education
+
+        <div class="visual-panel">
+          <p class="visual-title">Reported LMS scale · approximate comparison</p>
+
+          <div class="scale-row">
+            <span>Earlier baseline</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:20%"></div>
+            </div>
+            <span class="bar-value">~2,000</span>
+          </div>
+
+          <div class="scale-row">
+            <span>Later scale</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:100%"></div>
+            </div>
+            <span class="bar-value">10,000+</span>
+          </div>
+
+          <p class="callout">
+            These are reported organisational scale figures, not a verified
+            monthly time series. The comparison does not imply that one
+            individual caused the growth.
+          </p>
         </div>
-      </div>
 
-      <h3>Business relevance</h3>
-      <p>
-        A structured partnership approach can help align institutional
-        requirements with programme delivery, technical resources and
-        longer-term education objectives.
-      </p>
-    </section>
-
-    <section class="case">
-      <span class="tag">Data Operations</span>
-      <span class="tag">Recruitment Workflow</span>
-      <span class="tag">Data Quality</span>
-      <h2>03 — Candidate Data & Screening Workflow Support</h2>
-
-      <h3>The challenge</h3>
-      <p>
-        Large candidate datasets require consistent screening criteria,
-        organised records and traceable outputs so teams can review
-        information more efficiently.
-      </p>
-
-      <h3>My approach</h3>
-      <ul>
-        <li>Supported workflows involving candidate records and screening data.</li>
-        <li>Worked with structured outputs in spreadsheets, including
-            candidate references and resume links.</li>
-        <li>Worked with a stated 55% screening threshold as part of the
-            workflow context.</li>
-        <li>Considered data consistency and the importance of human review,
-            especially where automated screening may miss relevant candidates.</li>
-      </ul>
-
-      <div class="details">
-        <div class="detail">
-          <strong>Reported dataset scale</strong>
-          105,000+ registered or eligible candidates
+        <div class="callout">
+          <strong>What this demonstrates:</strong>
+          data preparation, structured reporting, cross-functional support
+          and the ability to connect operational questions with analytical workflows.
         </div>
-        <div class="detail">
-          <strong>Screening context</strong>
-          55% threshold
+      </section>
+
+      <section id="ipp" class="case-card reveal">
+        <div class="case-top">
+          <div>
+            <p class="case-number">Case study 02 · Institutional Partnership Program</p>
+            <h3>Connecting institutional needs with technology programmes</h3>
+            <p class="case-subtitle">
+              Supporting conversations and coordination around education,
+              industry exposure, technology labs and institutional collaboration.
+            </p>
+          </div>
+          <span class="tag">Program Operations</span>
         </div>
-        <div class="detail">
-          <strong>Tools and outputs</strong>
-          Excel, Google Sheets and MySQL
+
+        <div class="case-grid">
+          <div class="detail">
+            <h4>The challenge</h4>
+            <p>
+              Institutions could require several forms of support, from
+              technology education and practical labs to expert-led sessions
+              and exposure to industry expectations. Coordinating these
+              needs required structured conversations and follow-through.
+            </p>
+
+            <div style="height:20px"></div>
+
+            <h4>My contribution</h4>
+            <ul>
+              <li>Participated in college visits, seminars and institutional discussions.</li>
+              <li>Supported coordination between institutional needs and programme offerings.</li>
+              <li>Worked across operational and technology-education activities.</li>
+              <li>Helped maintain follow-up and information flow between stakeholders.</li>
+            </ul>
+          </div>
+
+          <div class="detail">
+            <h4>How the work fits together</h4>
+            <div class="visual-panel">
+              <p class="visual-title">Partnership support process</p>
+
+              <div class="steps">
+                <div class="step">
+                  <b>01 · Discover</b>
+                  <span>Understand institutional requirements.</span>
+                </div>
+                <div class="step">
+                  <b>02 · Align</b>
+                  <span>Discuss suitable programme options.</span>
+                </div>
+                <div class="step">
+                  <b>03 · Coordinate</b>
+                  <span>Support internal follow-up.</span>
+                </div>
+                <div class="step">
+                  <b>04 · Track</b>
+                  <span>Maintain communication and progress.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <h3>Business relevance</h3>
-      <p>
-        Organised candidate data can make screening outputs easier to review
-        and help teams maintain a more consistent process. A threshold alone
-        does not establish screening accuracy or hiring outcomes.
-      </p>
-    </section>
+        <div class="visual-panel">
+          <p class="visual-title">Reported wider organisational context</p>
 
-    <section class="case">
-      <span class="tag">Prototype</span>
-      <span class="tag">Web Development</span>
-      <span class="tag">Blockchain Concepts</span>
-      <h2>04 — Academic Healthcare Records Prototype</h2>
+          <div class="scale-row">
+            <span>College visits and seminars</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:40%"></div>
+            </div>
+            <span class="bar-value">80+</span>
+          </div>
 
-      <h3>Project overview</h3>
-      <p>
-        An academic prototype exploring a digital workflow for healthcare
-        records, with an emphasis on access flow and decentralised-storage
-        concepts.
-      </p>
+          <div class="scale-row">
+            <span>Reported MoUs</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:100%"></div>
+            </div>
+            <span class="bar-value">200+</span>
+          </div>
 
-      <h3>Technology explored</h3>
-      <ul>
-        <li>React and Vite for the user interface.</li>
-        <li>Node.js and Express for backend services.</li>
-        <li>MongoDB for application data.</li>
-        <li>Pinata IPFS, MetaMask and Polygon Mumbai test-network concepts.</li>
-        <li>Patient-code and OTP-style access flow concepts.</li>
-      </ul>
+          <p class="callout">
+            The MoU figure refers to wider organisational context across
+            institutions. It should not be interpreted as 200 agreements
+            personally negotiated or signed by me.
+          </p>
+        </div>
 
-      <p class="note">
-        This is an academic prototype, not a verified production healthcare
-        system. It should not be interpreted as clinically validated or
-        suitable for storing real patient information.
-      </p>
-    </section>
+        <div class="callout">
+          <strong>What this demonstrates:</strong>
+          stakeholder coordination, institutional communication,
+          programme execution support and operational follow-through.
+        </div>
+      </section>
 
-    <p class="note">
-      <strong>Evidence and attribution:</strong> Scale figures on this page
-      are reported organisational context supplied for this portfolio.
-      They are not claims that one individual independently caused the
-      outcomes. Detailed historical source data may be incomplete, and
-      illustrative or reconstructed datasets must be labelled before use
-      in any future charts or performance claims.
-    </p>
+      <section id="recruitment" class="case-card reveal">
+        <div class="case-top">
+          <div>
+            <p class="case-number">Case study 03 · Recruitment workflow support</p>
+            <h3>Structuring candidate information for screening</h3>
+            <p class="case-subtitle">
+              Supporting a process in which candidate records, resume links
+              and screening information needed to be organised for review.
+            </p>
+          </div>
+          <span class="tag">Data Workflow</span>
+        </div>
+
+        <div class="case-grid">
+          <div class="detail">
+            <h4>The challenge</h4>
+            <p>
+              Large volumes of candidate information can be difficult to
+              review consistently when records, resume links and screening
+              outputs are spread across systems.
+            </p>
+
+            <div style="height:20px"></div>
+
+            <h4>My contribution</h4>
+            <ul>
+              <li>Supported the organisation of candidate and resume information.</li>
+              <li>Worked with spreadsheet outputs and structured records.</li>
+              <li>Supported workflows involving Google Sheets, Excel and MySQL.</li>
+              <li>Worked within a process that used a 55% screening threshold.</li>
+            </ul>
+          </div>
+
+          <div class="detail">
+            <h4>Workflow overview</h4>
+
+            <div class="visual-panel">
+              <p class="visual-title">From candidate records to review</p>
+
+              <div class="process-list">
+                <div class="process-item">
+                  <strong>01 · Candidate records</strong>
+                  <span>Registered or eligible candidate information.</span>
+                </div>
+                <div class="process-item">
+                  <strong>02 · Resume access</strong>
+                  <span>Resume links and supporting details.</span>
+                </div>
+                <div class="process-item">
+                  <strong>03 · Screening rule</strong>
+                  <span>Configured threshold of 55% in the workflow.</span>
+                </div>
+                <div class="process-item">
+                  <strong>04 · Review output</strong>
+                  <span>Structured records for further review.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-panel">
+          <p class="visual-title">Reported workflow scale</p>
+
+          <div class="scale-row">
+            <span>Candidate records</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:100%"></div>
+            </div>
+            <span class="bar-value">105,000+</span>
+          </div>
+
+          <div class="scale-row">
+            <span>Screening threshold</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="--bar-width:55%"></div>
+            </div>
+            <span class="bar-value">55%</span>
+          </div>
+
+          <p class="callout">
+            105,000+ refers to registered or eligible candidates, not
+            necessarily job applications. The 55% value is a screening
+            threshold, not a measured accuracy, selection rate or hiring rate.
+          </p>
+        </div>
+
+        <div class="callout">
+          <strong>What this demonstrates:</strong>
+          structured data handling, process support, record organisation
+          and an understanding of screening workflows.
+        </div>
+      </section>
+
+      <section id="prototype" class="case-card reveal">
+        <div class="case-top">
+          <div>
+            <p class="case-number">Case study 04 · Academic technology prototype</p>
+            <h3>Exploring controlled access to healthcare records</h3>
+            <p class="case-subtitle">
+              An academic prototype exploring a web application and
+              decentralised storage concepts for healthcare-record access.
+            </p>
+          </div>
+          <span class="tag">Prototype</span>
+        </div>
+
+        <div class="case-grid">
+          <div class="detail">
+            <h4>Project concept</h4>
+            <p>
+              The prototype explored how a web interface, backend services,
+              database records and decentralised storage components could
+              be connected in a controlled-access workflow.
+            </p>
+
+            <div style="height:20px"></div>
+
+            <h4>Technologies explored</h4>
+            <ul>
+              <li>React and Vite for the frontend.</li>
+              <li>Node.js and Express for backend services.</li>
+              <li>MongoDB for application data.</li>
+              <li>Pinata/IPFS, MetaMask and Polygon Mumbai in the blockchain-related workflow.</li>
+              <li>OTP and patient-code access concepts.</li>
+            </ul>
+          </div>
+
+          <div class="detail">
+            <h4>High-level architecture</h4>
+
+            <div class="visual-panel">
+              <p class="visual-title">Prototype components</p>
+
+              <div class="process-list">
+                <div class="process-item">
+                  <strong>Frontend</strong>
+                  <span>React + Vite interface.</span>
+                </div>
+                <div class="process-item">
+                  <strong>Backend</strong>
+                  <span>Node.js + Express services.</span>
+                </div>
+                <div class="process-item">
+                  <strong>Application data</strong>
+                  <span>MongoDB records.</span>
+                </div>
+                <div class="process-item">
+                  <strong>Decentralised components</strong>
+                  <span>IPFS and blockchain test-network concepts.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Scope note:</strong>
+          this is presented as an academic prototype, not a production
+          healthcare platform. No claim is made that it has been clinically
+          validated, deployed for real patients or certified for regulatory compliance.
+        </div>
+      </section>
+
+      <section class="reveal">
+        <div class="section-heading">
+          <p class="eyebrow">How I work</p>
+          <h2>Across operations, data and technology</h2>
+          <p>
+            My approach is to understand the workflow first, organise the
+            information, coordinate the people involved and use technology
+            where it helps make the process clearer.
+          </p>
+        </div>
+
+        <div class="next-links">
+          <a class="next-link" href="experience.html">
+            <strong>01 · Experience →</strong>
+            <span>Review my professional responsibilities and work history.</span>
+          </a>
+
+          <a class="next-link" href="education.html">
+            <strong>02 · Education and skills →</strong>
+            <span>Explore my AI and Data Science education and technical skills.</span>
+          </a>
+
+          <a class="next-link" href="contact.html">
+            <strong>03 · Contact →</strong>
+            <span>Connect with me about relevant opportunities.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="note reveal">
+        <strong>About the figures and visuals:</strong>
+        the organisational figures shown here are reported context supplied
+        for this portfolio. They are not independently audited results.
+        The diagrams illustrate workflows and are not screenshots of internal
+        company systems. No confidential candidate data, client records or
+        institutional documents are displayed.
+      </section>
+    </div>
   </main>
 
   <footer>
-    © 2026 Sahil Patil · Operations · Analytics · Technology
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sahil Patil · Professional Portfolio</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+        <a href="#top" id="backToTop">Back to top ↑</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+      });
+
+      navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "Menu ☰";
+        });
+      });
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      document.getElementById("backToTop").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const revealElements = document.querySelectorAll(".reveal");
+      const bars = document.querySelectorAll(".bar-fill");
+
+      if ("IntersectionObserver" in window && !reducedMotion) {
+        const revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+
+        revealElements.forEach(function (element) {
+          revealObserver.observe(element);
+        });
+
+        const barObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              barObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        bars.forEach(function (bar) {
+          barObserver.observe(bar);
+        });
+      } else {
+        revealElements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+
+        bars.forEach(function (bar) {
+          bar.classList.add("animate");
+        });
+      }
+
+      const counters = document.querySelectorAll("[data-count]");
+
+      function animateCounter(element) {
+        const target = Number(element.dataset.count);
+
+        if (!Number.isFinite(target)) return;
+
+        if (reducedMotion) {
+          element.textContent = target.toLocaleString("en-IN");
+          return;
+        }
+
+        const duration = 1100;
+        const start = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(target * eased);
+
+          element.textContent = current.toLocaleString("en-IN");
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            element.textContent = target.toLocaleString("en-IN");
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      if ("IntersectionObserver" in window && !reducedMotion) {
+        const counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (counter) {
+          counterObserver.observe(counter);
+        });
+      } else {
+        counters.forEach(animateCounter);
+      }
+    })();
+  </script>
 </body>
 </html>
